@@ -1,0 +1,13 @@
+include /node_modules/bemto.pug/bemto
+include /src/pug/settings/bemto-settings
+
+doctype html
+html(lang='ru')
+  head
+    include base/meta/base
+      title SCSS-mixin
+      block head_link
+        link(rel='stylesheet', href='/build/css/fonts.min.css')/
+        link(rel='stylesheet', href="/build/css/style.min.css")/
+  body
+    block content
