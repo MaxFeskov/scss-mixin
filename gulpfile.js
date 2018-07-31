@@ -24,7 +24,6 @@ gulp.task(
     'clean:image',
     'clean:icon',
     'clean:font',
-    'clean:html',
     'clean:style',
   ),
 );
@@ -34,8 +33,7 @@ gulp.task(
   gulp.series(
     'clean',
     gulp.parallel('build:image', 'build:icon', 'build:font'),
-    gulp.parallel('build:style'),
-    'build:html',
+    'build:style',
   ),
 );
 
@@ -46,7 +44,6 @@ gulp.task(
     'watch:icon',
     'watch:font',
     'watch:style',
-    'watch:html',
   ),
 );
 
@@ -54,8 +51,7 @@ gulp.task(
   'dev',
   gulp.series(
     gulp.parallel('dev:image', 'dev:icon', 'dev:font'),
-    gulp.parallel('dev:style'),
-    'dev:html',
+    'dev:style',
   ),
 );
 

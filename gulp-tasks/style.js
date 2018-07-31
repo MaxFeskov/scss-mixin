@@ -19,6 +19,7 @@ gulp.task('build:style', () =>
       $.sass.logError.bind(this)(err);
     })
     .pipe($.autoprefixer())
+    .pipe($.group_css_media_queries())
     .pipe($.cssmin())
     .pipe($.eol(path.src.lineending))
     .pipe($.insert.append(path.src.lineending))
@@ -39,6 +40,7 @@ gulp.task('dev:style', () =>
       this.emit('end');
     })
     .pipe($.autoprefixer())
+    .pipe($.group_css_media_queries())
     .pipe($.eol(path.src.lineending))
     .pipe($.insert.append(path.src.lineending))
     .pipe($.ext_replace('.min.css'))
